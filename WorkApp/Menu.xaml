@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WorkApp.Menu">
+    <ContentPage.Content>
+        <Grid>
+            <Image Source="https://i.pinimg.com/originals/74/1e/7c/741e7c69f28641fdb3a9cf0fb6072bfe.jpg" Aspect="AspectFill"/>
+            <StackLayout VerticalOptions="Center" Spacing="40">
+                <Button Text="Add new order" x:Name="createOrderButton" Clicked="createOrderButton_Clicked" CornerRadius="20" Opacity="0.5"/>
+                <Button Text="List all orders" x:Name="listOrdersButton" Clicked="listOrdersButton_Clicked" CornerRadius="20" Opacity="0.5"/>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

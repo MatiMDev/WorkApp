@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WorkApp.LoginPage">
+    <ContentPage.Content>
+        <Grid>
+            <Image Source="https://i.pinimg.com/originals/74/1e/7c/741e7c69f28641fdb3a9cf0fb6072bfe.jpg" Aspect="AspectFill"/>
+            <StackLayout>
+                
+                <RelativeLayout>
+                    <Label x:Name="login" Text="Login:" Margin="20, 150, 10, 10"
+                        VerticalOptions="CenterAndExpand" FontSize="Large" Opacity="1"
+                             RelativeLayout.WidthConstraint="{ConstraintExpression
+				                                                Type=RelativeToParent,
+				                                                Property=Width,
+				                                                Factor=1}"/>
+                    
+                    <BoxView x:Name ="loginBox" BackgroundColor="#f7f7f7" Opacity="0.5" HeightRequest="50" Margin="10" CornerRadius="20" VerticalOptions="Center"
+                             RelativeLayout.YConstraint="{ConstraintExpression
+				                                                Type=RelativeToView,
+                                                                ElementName=login,
+				                                                Property=Y,
+				                                                Factor=1,
+                                                                Constant=50}"
+                             
+                             RelativeLayout.WidthConstraint="{ConstraintExpression
+                                                                Type=RelativeToParent,
+                                                                Property=Width,
+                                                                Factor=1}"/>
+                    
+                    <Entry x:Name="loginEntry" Margin="20, 0, 0, 0"
+                           RelativeLayout.YConstraint="{ConstraintExpression
+				                                                Type=RelativeToView,
+                                                                ElementName=loginBox,
+				                                                Property=Y,
+				                                                Factor=1}"
+                           RelativeLayout.XConstraint="{ConstraintExpression
+				                                                Type=RelativeToView,
+                                                                ElementName=loginBox,
+				                                                Property=Width,
+				                                                Factor=0}"
+                           RelativeLayout.WidthConstraint="{ConstraintExpression
+                                                                Type=RelativeToView,
+                                                                ElementName=loginBox,
+                                                                Property=Width,
+                                                                Factor=1}"
+                           RelativeLayout.HeightConstraint="{ConstraintExpression
+                                                                Type=RelativeToView,
+                                                                ElementName=loginBox,
+                                                                Property=Height,
+                                                                Factor=1}"/>
+
+
+                    
+
+                </RelativeLayout>
+
+                <RelativeLayout>
+                    <Label Text="Password:" FontSize="Large" Margin="20, 0, 0, 0" x:Name="password"
+                           RelativeLayout.HeightConstraint="{ConstraintExpression 
+				                                                Type=RelativeToParent,
+				                                                Property=Height,
+				                                                Factor=0.2}"
+                             RelativeLayout.WidthConstraint="{ConstraintExpression
+				                                                Type=RelativeToParent,
+				                                                Property=Width,
+				                                                Factor=1}"/>
+
+                    <BoxView x:Name="passwordBox" BackgroundColor="#f7f7f7" Opacity="0.5" HeightRequest="50" WidthRequest="400" Margin="10" CornerRadius="20" VerticalOptions="Center"
+                             RelativeLayout.YConstraint="{ConstraintExpression
+				                                                Type=RelativeToView,
+                                                                ElementName=password,
+				                                                Property=Y,
+				                                                Factor=1,
+                                                                Constant=50}"
+                             
+                             RelativeLayout.WidthConstraint="{ConstraintExpression
+                                                                Type=RelativeToParent,
+                                                                Property=Width,
+                                                                Factor=1}"/>
+
+                    <Entry x:Name="passwordEntry" IsPassword="True" Margin="20, 0, 0, 0"
+                           RelativeLayout.YConstraint="{ConstraintExpression
+				                                                Type=RelativeToView,
+                                                                ElementName=passwordBox,
+				                                                Property=Y,
+				                                                Factor=1}"
+                           RelativeLayout.XConstraint="{ConstraintExpression
+				                                                Type=RelativeToView,
+                                                                ElementName=passwordBox,
+				                                                Property=Width,
+				                                                Factor=0}"
+                           RelativeLayout.WidthConstraint="{ConstraintExpression
+                                                                Type=RelativeToView,
+                                                                ElementName=passwordBox,
+                                                                Property=Width,
+                                                                Factor=1}"
+                           RelativeLayout.HeightConstraint="{ConstraintExpression
+                                                                Type=RelativeToView,
+                                                                ElementName=passwordBox,
+                                                                Property=Height,
+                                                                Factor=1}"/>
+                </RelativeLayout>
+                <Label x:Name="errorLabel" TextColor="Red" FontSize="Large" Margin="20, 0, 0, 0"/>
+                <Button x:Name="loginButton" Text="Sign in" Clicked="loginButton_Clicked" Opacity="0.5" Margin="10"/>
+
+
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

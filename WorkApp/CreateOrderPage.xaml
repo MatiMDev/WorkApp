@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="WorkApp.CreateOrderPage">
+    <ContentPage.Content>
+        <Grid>
+            <Image Source="https://i.pinimg.com/originals/74/1e/7c/741e7c69f28641fdb3a9cf0fb6072bfe.jpg" Aspect="AspectFill"/>
+            <StackLayout Spacing="0" VerticalOptions="StartAndExpand">
+                <Label Text="Create a new order" FontSize="40" TextColor="Black" HorizontalOptions="Center" />
+                <Label Text="Enter client name" Margin="20, 40, 0, 0" FontSize="Large"/>
+                <RelativeLayout>
+                    <BoxView x:Name="clientNameBox" BackgroundColor="#f7f7f7" Opacity="0.5" HeightRequest="50" Margin="10" CornerRadius="20" VerticalOptions="StartAndExpand"
+                             RelativeLayout.WidthConstraint="{ConstraintExpression
+                                                                Type=RelativeToParent,
+                                                                Property=Width,
+                                                                Factor=1}"/>
+                    <Entry x:Name="clientName" Margin="20, 0, 0, 0"
+                           RelativeLayout.YConstraint="{ConstraintExpression
+                                                                Type=RelativeToView,
+                                                                ElementName=clientNameBox,
+                                                                Property=Y,
+                                                                Factor=1}"
+                           
+                           RelativeLayout.WidthConstraint="{ConstraintExpression
+                                                                Type=RelativeToView,
+                                                                ElementName=clientNameBox,
+                                                                Property=Width,
+                                                                Factor=1}"/>
+                </RelativeLayout>
+
+                <Label Text="Enter order name (optional)" FontSize="Large" Margin="20, 0, 0, 0"/>
+                <RelativeLayout>
+                    <BoxView x:Name="orderNameBox" BackgroundColor="#f7f7f7" Opacity="0.5" HeightRequest="50" Margin="10" CornerRadius="20" VerticalOptions="Center"
+                             RelativeLayout.WidthConstraint="{ConstraintExpression
+                                                                Type=RelativeToParent,
+                                                                Property=Width,
+                                                                Factor=1}"/>
+                    <Entry x:Name="orderName" Margin="20, 0, 0, 0"
+                           RelativeLayout.YConstraint="{ConstraintExpression
+                                                                Type=RelativeToView,
+                                                                ElementName=orderNameBox,
+                                                                Property=Y,
+                                                                Factor=1}"
+                           
+                           RelativeLayout.WidthConstraint="{ConstraintExpression
+                                                                Type=RelativeToView,
+                                                                ElementName=orderNameBox,
+                                                                Property=Width,
+                                                                Factor=1}"/>
+                </RelativeLayout>
+
+                <Label Text="Enter date of end of order" Margin="20, 0, 0, 0" FontSize="Large"/>
+                <RelativeLayout>
+                    <BoxView x:Name="datePickerBox" BackgroundColor="#f7f7f7" Opacity="0.5" HeightRequest="50" Margin="10" CornerRadius="20" VerticalOptions="Center"
+                             RelativeLayout.WidthConstraint="{ConstraintExpression
+                                                                Type=RelativeToParent,
+                                                                Property=Width,
+                                                                Factor=1}"/>
+                    
+                    <DatePicker x:Name="endDate" Margin="20, 0, 0, 0"
+                           RelativeLayout.YConstraint="{ConstraintExpression
+                                                                Type=RelativeToView,
+                                                                ElementName=datePickerBox,
+                                                                Property=Y,
+                                                                Factor=1}"
+                           
+                           RelativeLayout.WidthConstraint="{ConstraintExpression
+                                                                Type=RelativeToView,
+                                                                ElementName=datePickerBox,
+                                                                Property=Width,
+                                                                Factor=1}"/>
+                </RelativeLayout>
+
+                <Label Text="Enter name" FontSize="Large" Margin="20, 0, 0, 0"/>
+                    <RelativeLayout>
+                        <BoxView x:Name="yourNameBox" BackgroundColor="#f7f7f7" Opacity="0.5" HeightRequest="50" Margin="10" CornerRadius="20" VerticalOptions="Center"
+                             RelativeLayout.WidthConstraint="{ConstraintExpression
+                                                                Type=RelativeToParent,
+                                                                Property=Width,
+                                                                Factor=1}"/>
+                        <Entry x:Name="yourName" Margin="20, 0, 0, 0"
+                           RelativeLayout.YConstraint="{ConstraintExpression
+                                                                Type=RelativeToView,
+                                                                ElementName=yourNameBox,
+                                                                Property=Y,
+                                                                Factor=1}"
+                           
+                           RelativeLayout.WidthConstraint="{ConstraintExpression
+                                                                Type=RelativeToView,
+                                                                ElementName=yourNameBox,
+                                                                Property=Width,
+                                                                Factor=1}"/>
+                    </RelativeLayout>
+                </StackLayout>
+
+                <Button x:Name="submitButton" Text="Submit order" Clicked="submitButton_Clicked" Opacity="0.5" VerticalOptions="End"/>
+        </Grid>
+        
+    </ContentPage.Content>
+</ContentPage>

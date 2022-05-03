@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WorkApp.ListPage">
+    <ContentPage.Content>
+        <Grid>
+            <Image Source="https://i.pinimg.com/originals/57/81/7c/57817cbf22deb669f34539a78fa8beb8.jpg" Aspect="AspectFill"/>
+            <StackLayout>
+
+                <Grid x:Name="grid">
+
+                </Grid>
+
+                <ListView x:Name="list">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <RelativeLayout>
+                                    <BoxView x:Name="box" HeightRequest="100" Color="{Binding BoxColor}" Margin="10, 0, 10, 0" Opacity="0.5"
+                                         RelativeLayout.WidthConstraint="{ConstraintExpression
+                                                                            Type=RelativeToParent,
+                                                                            Property=Width,
+                                                                            Factor=1}"/>
+                                    <BoxView x:Name="smallBox" HeightRequest="100" WidthRequest="5" Color="Black" Opacity="0.5"
+                                         RelativeLayout.XConstraint="{ConstraintExpression
+                                                                            Type=RelativeToView,
+                                                                            ElementName=box,
+                                                                            Property=X,
+                                                                            Factor=0,
+                                                                            Constant=45}"/>
+                                    <Label FontSize="Large" TextColor="Black" Text="{Binding ID}" VerticalOptions="Center"
+                                       RelativeLayout.XConstraint="{ConstraintExpression
+                                                                            Type=RelativeToView,
+                                                                            ElementName=box,
+                                                                            Property=X,
+                                                                            Factor=1,
+                                                                            Constant=5}"
+                                           RelativeLayout.YConstraint="{ConstraintExpression
+                                                                            Type=RelativeToView,
+                                                                            ElementName=box,
+                                                                            Property=Y,
+                                                                            Factor=1,
+                                                                            Constant=5}"
+                                           RelativeLayout.WidthConstraint="{ConstraintExpression
+                                                                            Type=RelativeToParent,
+                                                                            Property=Width,
+                                                                            Factor=1}"/>
+                                    <Label x:Name="nameLabel" Text="{Binding ClientName}" HorizontalOptions="Center" TextColor="Black"
+                                           RelativeLayout.XConstraint="{ConstraintExpression
+                                                                            Type=RelativeToView,
+                                                                            ElementName=smallBox,
+                                                                            Property=X,
+                                                                            Factor=1,
+                                                                            Constant=10}"/>
+                                    <CheckBox x:Name="check1" IsChecked="{Binding IsStep1Done}" IsEnabled="False" Color="Aqua"
+                                              RelativeLayout.XConstraint="{ConstraintExpression
+                                                                            Type=RelativeToParent,
+                                                                            Property=X,
+                                                                            Factor=1,
+                                                                            Constant=200}"/>
+                                    <CheckBox x:Name="check2" IsChecked="{Binding IsStep2Done}" IsEnabled="False" Color="Aqua"
+                                              RelativeLayout.XConstraint="{ConstraintExpression
+                                                                            Type=RelativeToView,
+                                                                            ElementName=check1,
+                                                                            Property=X,
+                                                                            Factor=1,
+                                                                            Constant=20}"/>
+                                    <CheckBox x:Name="check3" IsChecked="{Binding IsStep3Done}" IsEnabled="False" Color="Aqua"
+                                              RelativeLayout.XConstraint="{ConstraintExpression
+                                                                            Type=RelativeToView,
+                                                                            ElementName=check2,
+                                                                            Property=X,
+                                                                            Factor=1,
+                                                                            Constant=20}"/>
+                                    <CheckBox x:Name="check4" IsChecked="{Binding IsStep4Done}" IsEnabled="False" Color="Aqua"
+                                              RelativeLayout.XConstraint="{ConstraintExpression
+                                                                            Type=RelativeToView,
+                                                                            ElementName=check3,
+                                                                            Property=X,
+                                                                            Factor=1,
+                                                                            Constant=20}"/>
+                                    <CheckBox x:Name="check5" IsChecked="{Binding IsReady}" IsEnabled="False" Color="Red"
+                                              RelativeLayout.XConstraint="{ConstraintExpression
+                                                                            Type=RelativeToView,
+                                                                            ElementName=check4,
+                                                                            Property=X,
+                                                                            Factor=1,
+                                                                            Constant=20}"/>
+                                </RelativeLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <Button x:Name ="orderButton" Text="Open order" Clicked="orderButton_Clicked"/>
+            </StackLayout>
+        </Grid>
+        
+    </ContentPage.Content>
+</ContentPage>
